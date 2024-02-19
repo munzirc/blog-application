@@ -13,6 +13,9 @@ export default function DashSidebar() {
     if (tabFormUrl) {
       setTab(tabFormUrl);
     }
+    return ()=>{
+        setTab('');
+    }
   }, [location.search]);
   return (
     <Sidebar className="w-full md:w-56">
