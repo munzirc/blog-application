@@ -70,7 +70,7 @@ export default function DashUsers() {
             </Table.Head>
             <TableBody className="divide-y">
               {users.map((user) => (
-                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800" key={user._id}>
                   <Table.Cell>
                     {new Date(user.createdAt).toLocaleDateString()}
                   </Table.Cell>
