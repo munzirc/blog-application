@@ -11,8 +11,6 @@ export default function DashPosts() {
   const [showModal, setShowModal] = useState(false);
   const [postIdToDelete, setPostIdToDelete] = useState('');
 
-  console.log(userPosts);
-
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -49,7 +47,7 @@ export default function DashPosts() {
     }
   };
 
-  const handelDeletePost = async () => {
+  const handleDeletePost = async () => {
      setShowModal(false);
      try {
         const res = await fetch(`/api/post/deletepost/${postIdToDelete}/${currentUser._id}`, {
@@ -88,7 +86,7 @@ export default function DashPosts() {
             </Table.Head>
             <TableBody className="divide-y">
               {userPosts.map((post) => (
-                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800" key={post._id}>
                   <Table.Cell>
                     {new Date(post.updatedAt).toLocaleDateString()}
                   </Table.Cell>
@@ -157,7 +155,7 @@ export default function DashPosts() {
               Are you sure you want to delete this post?
             </h3>
             <div className="flex justify-center gap-4">
-              <Button color="failure" onClick={handelDeletePost}>
+              <Button color="failure" onClick={handleDeletePost}>
                 Yes I'm sure
               </Button>
               <Button color="gray" onClick={() => setShowModal(false)}>
