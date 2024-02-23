@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Button, Spinner } from 'flowbite-react'
+import CommentSection from '../components/CommentSection';
 
 export default function PostPage() {
 
@@ -49,7 +50,7 @@ export default function PostPage() {
       <Link to={`/search?category=${post && post.category}`} className='self-center mt-5'>
         <Button color='gray' pill size='xs'>{post && post.category}</Button>
       </Link>
-      <img src={post && post.image} alt={post.title} className='mt-10 p-3 max-h-[600px] w-full object-cover' />
+      <img src={post && post.image} alt={post.title} className='mt-10 mb-10 max-h-[600px] w-full object-cover shadow-md' />
       <div className='flex justify-between p-3 border-b  border-slate-500 mx-auto w-full max-w-3xl text-xs'>
           <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
           <span className='italic'>{post && (post.content.length / 1000).toFixed(0)} mins read</span>
@@ -57,6 +58,8 @@ export default function PostPage() {
       <div className='p-3 max-w-3xl mx-auto w-full post-content' 
          dangerouslySetInnerHTML={{__html: post && post.content}}>
       </div>
+
+      <CommentSection postId={post._id} />
     </main>
   )
 }
