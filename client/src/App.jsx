@@ -19,7 +19,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-        <Header />
+      <Header />
+      <div style={{marginTop: 63.56}}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -36,7 +37,8 @@ export default function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/post/:postSlug" element={<PostPage />} />
         </Routes>
-        <Footer />
+      </div>
+      <Footer />
     </BrowserRouter>
   );
 }
