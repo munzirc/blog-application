@@ -52,7 +52,7 @@ export default function Header() {
 
   return (
     <Navbar className="border-b-2 fixed w-full top-0 z-20">
-      <div className="flex gap-4 lg:gap-16">
+      <div className="flex gap-4 lg:gap-16 pl-20">
         <Link
           to="/"
           className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
@@ -77,7 +77,7 @@ export default function Header() {
         </Button>
       </div>
 
-      <div className="flex gap-2 md:gap-4 md:order-2 items-center ">
+      <div className="flex gap-2 md:gap-4 md:order-2 items-center pr-20">
         <Button
           className="w-12 h-10 sm:inline"
           color="gray"
