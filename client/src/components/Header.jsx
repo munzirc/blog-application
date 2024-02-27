@@ -51,7 +51,7 @@ export default function Header() {
   };
 
   return (
-    <Navbar className="border-b-2 fixed w-full top-0 z-20">
+    <Navbar className="border-b-2 fixed right-0 left-0 lg:px-32 top-0 z-20">
       <div className="flex gap-4 lg:gap-16">
         <Link
           to="/"

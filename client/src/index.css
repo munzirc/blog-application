@@ -43,7 +43,13 @@ body{
     background-color: rgb(51, 61, 76) !important;
 }
 
-
+@media only screen and (max-width: 720px) {
+    .post-content pre{
+        white-space: pre-wrap; /* Wrap lines within <pre> tag */
+        word-wrap: break-word; /* Break long words */
+        overflow-wrap: break-word; /* Ensure long words are broken */
+    }
+}
 
 .post-content a:hover{
     text-decoration: underline;

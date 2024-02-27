@@ -63,13 +63,13 @@ export default function PostPage() {
 
 
   return (
-    <main className='p-3 flex flex-col max-w-full mx-auto min-h-screen'>
+    <main className='p-3 flex flex-col max-w-full mx-auto min-h-screen overflow-hidden'>
       <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl'>
         {post && post.title}</h1>
       <Link to={`/search?category=${post && post.category}`} className='self-center mt-5'>
         <Button color='gray' pill size='xs'>{post && post.category}</Button>
       </Link>
-      <img src={post && post.image} alt={post.title} className='mt-10 mb-10 max-h-[600px] w-[70%] mx-auto object-cover shadow-md' />
+      <img src={post && post.image} alt={post.title} className='mt-10 mb-10 max-h-[600px] w-full md:w-[70%] mx-auto object-cover shadow-md' />
       <div className='flex justify-between p-3 border-b  border-slate-500 mx-auto w-full max-w-3xl text-xs'>
           <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
           <span className='italic'>{post && (post.content.length / 1000).toFixed(0)} mins read</span>
